@@ -1,0 +1,11 @@
+{
+  "name": "loma",
+  "description": "Living Organized Memory Architecture - AI-persistent project knowledge system",
+  "version": "1.0.0",
+  "author": {
+    "name": "Amol Patel"
+  },
+  "homepage": "https://github.com/amolpatel/loma-plugin",
+  "repository": "https://github.com/amolpatel/loma-plugin",
+  "license": "MIT"
+}

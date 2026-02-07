@@ -157,19 +157,3 @@ Run `/loma:maintain` to check:
 - Orphaned files not in the index
 - Missing documentation for new modules
 
----
-
-## Contributing
-
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
----
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
-

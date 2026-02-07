@@ -1,0 +1,13 @@
+{
+  "name": "amolpatel-plugins",
+  "owner": {
+    "name": "Amol Patel"
+  },
+  "plugins": [
+    {
+      "name": "loma",
+      "source": ".",
+      "description": "Living Organized Memory Architecture - AI-persistent project knowledge system for Claude Code"
+    }
+  ]
+}

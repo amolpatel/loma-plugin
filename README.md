@@ -2,7 +2,7 @@
 
 **Living Organized Memory Architecture** - An AI-persistent project knowledge system for Claude Code.
 
-Loma helps AI coding assistants maintain context and alignment across sessions spanning weeks or months. It's a rebranded and enhanced version of the [Lode Coding](https://github.com/fjzeit/lode) methodology.
+Loma helps AI coding assistants maintain context and alignment across sessions spanning weeks or months.
 
 ---
 
@@ -171,8 +171,3 @@ Contributions welcome! Please:
 
 MIT License - see [LICENSE](LICENSE) for details.
 
----
-
-## Credits
-
-Based on the [Lode Coding](https://github.com/fjzeit/lode) methodology by [@fjzeit](https://github.com/fjzeit).

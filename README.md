@@ -4,6 +4,8 @@
 
 Loma helps AI coding assistants maintain context and alignment across sessions spanning weeks or months.
 
+Yes, this was built with AI. But, I thought it through.
+
 ---
 
 ## Installation

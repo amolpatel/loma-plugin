@@ -1,50 +1,10 @@
 # Loma Plugin
 
-**Living Organized Memory Architecture** - An AI-persistent project knowledge system for Claude Code.
+**Living Organized Memory Architecture** - An AI-persistent project knowledge system for Claude Code and OpenAI Codex.
 
 Loma helps AI coding assistants maintain context and alignment across sessions spanning weeks or months.
 
 Yes, this was built with AI. But, I thought it through.
-
----
-
-## Installation
-
-### From GitHub (recommended)
-
-```bash
-claude plugin install github:amolpatel/loma-plugin
-```
-
-### Local Development
-
-```bash
-git clone https://github.com/amolpatel/loma-plugin.git
-claude --plugin-dir ./loma-plugin
-```
-
----
-
-## Quick Start
-
-### Initialize a New Project
-
-```
-/loma:init
-```
-
-This creates the `loma/` folder structure with starter templates.
-
-### Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `/loma` | Show all available Loma commands |
-| `/loma:init` | Initialize `loma/` structure in a new project |
-| `/loma:audit` | Audit existing `loma/` for correctness |
-| `/loma:handover` | Create session handover document |
-| `/loma:update-map` | Regenerate `loma-map.md` index |
-| `/loma:maintain` | Run weekly maintenance checklist |
 
 ---
 
@@ -98,6 +58,72 @@ loma/
 
 ---
 
+## Installation
+
+### Claude Code — From GitHub (recommended)
+
+```bash
+claude plugin install github:amolpatel/loma-plugin
+```
+
+### Claude Code — Local Development
+
+```bash
+git clone https://github.com/amolpatel/loma-plugin.git
+claude --plugin-dir ./loma-plugin
+```
+
+### OpenAI Codex
+
+Loma skills use the same `SKILL.md` format supported by Codex. Install by copying the skills into your Codex skills directory:
+
+```bash
+git clone https://github.com/amolpatel/loma-plugin.git /tmp/loma-plugin
+mkdir -p ~/.codex/skills
+for dir in /tmp/loma-plugin/skills/*/; do
+  cp -r "$dir" ~/.codex/skills/loma-"$(basename "$dir")"
+done
+```
+
+Then enable skills in Codex:
+
+```bash
+codex --enable skills
+```
+
+Skills are invoked with a `$` prefix in Codex (e.g. `$loma-init` instead of `/loma:init`). See the [commands table](#available-commands) below for both syntaxes.
+
+---
+
+## Quick Start
+
+### Initialize a New Project
+
+**Claude Code:**
+```
+/loma:init
+```
+
+**Codex:**
+```
+$loma-init
+```
+
+This creates the `loma/` folder structure with starter templates and an `AGENTS.md` at your project root so Codex picks up the loma context automatically at every session start.
+
+### Available Commands
+
+| Description | Claude Code | Codex |
+|-------------|-------------|-------|
+| Show all Loma commands | `/loma` | — |
+| Initialize `loma/` structure | `/loma:init` | `$loma-init` |
+| Audit `loma/` for correctness | `/loma:audit` | `$loma-audit` |
+| Create session handover document | `/loma:handover` | `$loma-handover` |
+| Regenerate `loma-map.md` index | `/loma:update-map` | `$loma-update-map` |
+| Run weekly maintenance checklist | `/loma:maintain` | `$loma-maintain` |
+
+---
+
 ## AI Agent Workflow
 
 ### At Session Start
@@ -136,7 +162,7 @@ Every loma file should:
 
 ## Session Handovers
 
-Use `/loma:handover` to create continuity documents with:
+Use `/loma:handover` (Claude Code) or `$loma-handover` (Codex) to create continuity documents with:
 
 - Current task state
 - Decisions made
@@ -150,10 +176,9 @@ Handover files are saved to `loma/tmp/` (git-ignored).
 
 ## Weekly Maintenance
 
-Run `/loma:maintain` to check:
+Run `/loma:maintain` (Claude Code) or `$loma-maintain` (Codex) to check:
 
 - Documentation currency vs code changes
 - Stale TODO/FIXME markers
 - Orphaned files not in the index
 - Missing documentation for new modules
-

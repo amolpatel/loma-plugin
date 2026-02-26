@@ -8,46 +8,6 @@ Yes, this was built with AI. But, I thought it through.
 
 ---
 
-## Installation
-
-### From GitHub (recommended)
-
-```bash
-claude plugin install github:amolpatel/loma-plugin
-```
-
-### Local Development
-
-```bash
-git clone https://github.com/amolpatel/loma-plugin.git
-claude --plugin-dir ./loma-plugin
-```
-
----
-
-## Quick Start
-
-### Initialize a New Project
-
-```
-/loma:init
-```
-
-This creates the `loma/` folder structure with starter templates.
-
-### Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `/loma` | Show all available Loma commands |
-| `/loma:init` | Initialize `loma/` structure in a new project |
-| `/loma:audit` | Audit existing `loma/` for correctness |
-| `/loma:handover` | Create session handover document |
-| `/loma:update-map` | Regenerate `loma-map.md` index |
-| `/loma:maintain` | Run weekly maintenance checklist |
-
----
-
 ## What is Loma?
 
 Loma is a documentation methodology designed for AI-assisted development. It creates a structured knowledge base that:
@@ -95,6 +55,46 @@ loma/
 - **AI**: Memory keeper and high-speed executor
 
 **Golden Rule:** Anything worth implementing is worth permanently recording in the Loma.
+
+---
+
+## Installation
+
+### From GitHub (recommended)
+
+```bash
+claude plugin install github:amolpatel/loma-plugin
+```
+
+### Local Development
+
+```bash
+git clone https://github.com/amolpatel/loma-plugin.git
+claude --plugin-dir ./loma-plugin
+```
+
+---
+
+## Quick Start
+
+### Initialize a New Project
+
+```
+/loma:init
+```
+
+This creates the `loma/` folder structure with starter templates.
+
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `/loma` | Show all available Loma commands |
+| `/loma:init` | Initialize `loma/` structure in a new project |
+| `/loma:audit` | Audit existing `loma/` for correctness |
+| `/loma:handover` | Create session handover document |
+| `/loma:update-map` | Regenerate `loma-map.md` index |
+| `/loma:maintain` | Run weekly maintenance checklist |
 
 ---
 
@@ -156,4 +156,3 @@ Run `/loma:maintain` to check:
 - Stale TODO/FIXME markers
 - Orphaned files not in the index
 - Missing documentation for new modules
-

@@ -26,7 +26,13 @@ Initialize the `loma/` folder structure with starter templates for a new project
    - Replace `{{PROJECT_NAME}}` placeholder with the actual project name (derive from directory name or ask user)
    - Replace `{{DATE}}` placeholder with current date
 
-4. **Update .gitignore**:
+4. **Create AGENTS.md at the project root** (for Codex and other agents):
+   - Check if `AGENTS.md` already exists at the project root
+   - If not, copy `templates/AGENTS.md` from the plugin and replace placeholders
+   - If it already exists, skip and note it was not overwritten
+   - This file tells Codex (and other AI agents) to read the loma at session start
+
+5. **Update .gitignore**:
    - Check if `.gitignore` exists
    - If `loma/tmp/` is not already ignored, add it
    - Use this pattern:
@@ -35,13 +41,14 @@ Initialize the `loma/` folder structure with starter templates for a new project
      loma/tmp/
      ```
 
-5. **Provide guidance**:
+6. **Provide guidance**:
    After creation, tell the user:
    - "Loma structure initialized successfully!"
    - "Next steps:"
      - "1. Edit `loma/summary.md` with your project overview"
      - "2. Add domain-specific terms to `loma/terminology.md`"
      - "3. Create domain folders as your project grows (e.g., `loma/api/`, `loma/data/`)"
+     - "4. `AGENTS.md` was created at your project root — Codex and other AI agents will read this automatically at session start"
 
 ## Template Files
 
